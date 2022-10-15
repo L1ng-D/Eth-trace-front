@@ -18,7 +18,7 @@
                 :color="['#008CFF', '#00ADDD']"
             /></el-col>
             <el-col :span="6"
-              ><div class="title_time">{{ dateYear + dateWeek + dateDay }}</div>
+              ><div class="title_time">{{ dateYear + ' ' + dateWeek + ' ' + dateDay }}</div>
               <dv-decoration-8
                 :reverse="true"
                 class="title_left"

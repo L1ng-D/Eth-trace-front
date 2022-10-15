@@ -162,7 +162,6 @@
 <script>
 import Aside from '@/components/Aside.vue'
 import Top from '@/components/Top.vue'
-import loginView from '@/views/LoginView'
 import { ElMessage } from 'element-plus'
 export default {
   name: 'InfoView',
