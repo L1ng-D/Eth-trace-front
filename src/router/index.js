@@ -64,6 +64,11 @@ const routes = [
     name:'Logistics',
     component: Logistics,
   }
+ ,{
+  path: '/user',
+      name:'UserView',
+      component: UserView,
+}
 ]
 
 const router = createRouter({

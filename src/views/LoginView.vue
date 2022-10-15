@@ -150,11 +150,11 @@ export default {
   background-color: transparent;
   color: white;
 }
-.form-wrapper .action {
+ .action {
   display: flex;
   justify-content: center;
 }
-.form-wrapper .action .btn {
+ .btn {
   width: 60%;
   text-transform: uppercase;
   border: 2px solid #6fc462;
@@ -164,7 +164,7 @@ export default {
   cursor: pointer;
   font-weight: bold;
 }
-.form-wrapper .action .btn:hover {
+ .btn:hover {
   filter: brightness(3.1);
 }
 .form-wrapper .icon-wrapper {
