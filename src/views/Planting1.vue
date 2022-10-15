@@ -156,20 +156,5 @@ export default {
 .btn:hover {
   filter: brightness(3.1);
 }
-.table /deep/ .el-table th {
-  background-color: transparent!important;
-}
 
-.table /deep/ .el-table tr {
-  background-color: transparent!important;
-}
-.table /deep/  .el-table--enable-row-transition .el-table__body td, .el-table .cell{
-  background-color: transparent;
-}
-.el-table::before {//去除底部白线
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 0px;
-}
 </style>
