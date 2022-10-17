@@ -6,17 +6,21 @@
     <Aside />
     <div class="box" style="width: 80%">
 
-      <div class="table" style="width: 80%">
-        <el-table :data="plantInfo"  stripe style="width: 100%;text-align: center">
+      <div class="table">
+        <el-table :data="plantInfo"  stripe style="width: auto;text-align: center">
           <el-table-column prop="id" label="农产品编号" align="center" header-align="left" width="100px"/>
-          <el-table-column prop="name" label="农产品名称" />
-          <el-table-column prop="time" label="种植时间" />
+          <el-table-column prop="name"  label="农产品名称" />
+          <el-table-column prop="time"  label="种植时间" />
           <el-table-column prop="address" label="种植地点"/>
-          <el-table-column prop="person" label="种植人员"/>
-            <el-table-column  fixed="right" label="操作" >
+          <el-table-column prop="person"  label="种植人员"/>
+            <el-table-column  fixed="right" label="操作" width="300px">
             <template #default="{ row }">
-              <el-button type="primary" @click="handleDetail(row)">新增</el-button>
-              <el-button type="dangerous" @click="handleDel(row)">新增</el-button>
+              <div class="action">
+                <div class="btn"  @click="handleNew(row)">新增</div>
+                <div class="btn"  @click="handleDetail(row)">详情</div>
+                <div class="btn"  @click="handleEdit(row)">编辑</div>
+                <div class="btn"  @click="handleDel(row)">删除</div>
+              </div>
             </template>
             </el-table-column>
         </el-table>
@@ -135,23 +139,24 @@ export default {
   text-align: center;
 }
 .action {
-  width: auto;
-  height: auto;
+  width: 300px;
+  height: 50px;
   justify-content: center;
-
 }
 .btn {
-  width: 60px;
-  text-transform: uppercase;
-  border: 2px solid #6fc462;
+  width: 55px;
+  border: 2px solid #52a640;
   text-align: center;
-  line-height: 35px;
-  border-radius: 10px;
-  cursor: pointer;
+  line-height: 30px;
+  border-radius: 8px;
   font-weight: bold;
+  display: inline-block;
+  margin-left:10px;
+
 }
 .btn:hover {
-  filter: brightness(3.1);
+  filter: brightness(10);
+  color: black;
 }
 
 </style>
