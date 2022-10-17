@@ -41,7 +41,14 @@
 
 
         <el-drawer v-model="drawer" title="员工信息" :with-header="false">
-          <span>Hi there!</span>
+          <el-card v-for="(staff,i) in staff" style="margin-top: 40px;height: 20%;">
+            <div style="width: 100%;height: 100%;display: flex">
+            <el-avatar shape="square" :size="100" :src="staff.pic" />
+                <span style="margin-left: 10%;font-size: 20px;margin-top:10%">{{staff.name}}</span>
+            <el-avatar shape="square" :size="100" :src="staff.permit" style="margin-left:10%" />
+
+            </div>
+          </el-card>
         </el-drawer>
 
 
@@ -132,7 +139,21 @@ export default {
         name:"",
         file:"",
         text:""
-      },
+      },staff:[
+        {
+          name:"张三",
+          pic:"https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png",
+          permit:""
+        },{
+          name: "李四",
+          pic:"",
+          permit:""
+        },{
+          name: "王五",
+          pic:"",
+          permit:""
+        }
+      ],
       drawer:false,
       dialogVisible:false,
       tableData:[
