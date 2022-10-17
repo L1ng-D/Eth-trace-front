@@ -27,7 +27,7 @@
 
     <el-menu-item index="3"  @click="this.$router.push('/info')">
       <el-icon><Position /></el-icon>
-      <span style="letter-spacing: 5px">全部信息</span>
+      <span style="letter-spacing: 5px">产品信息</span>
     </el-menu-item>
 
     <el-sub-menu index="4" collapse-transition = true>

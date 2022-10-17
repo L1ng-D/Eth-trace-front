@@ -42,6 +42,16 @@
             </div>
           </template>
         </el-table-column>
+
+        <el-table-column label="上传单位" width="150">
+          <template #default="scope">
+            <div style="display: flex; align-items: center">
+              <span >{{ scope.row.company }}</span>
+            </div>
+          </template>
+        </el-table-column>
+
+
         <el-table-column label="区域名称" width="150">
           <template #default="scope">
             <div style="display: flex; align-items: center">
@@ -54,6 +64,7 @@
           <template #default="scope">
             <div style="display: flex; align-items: center">
               <el-icon><timer /></el-icon>
+
               <span style="margin-left: 15px">{{ scope.row.plantTime }}</span>
             </div>
           </template>
@@ -116,7 +127,14 @@
 
 
           <el-form-item label="状态">
-            <el-input v-model="form.status" />
+            <el-select v-model="form.status" placeholder="请选择状态">
+              <el-option
+                  v-for="item in options"
+                  :key="item.value"
+                  :label="item.label"
+                  :value="item.value"
+              />
+            </el-select>
           </el-form-item>
 
           <el-form-item label="产品名称">
@@ -134,9 +152,7 @@
             <el-input v-model="form.projectId" readonly />
           </el-form-item>
 
-          <el-form-item label="上传时间">
-            <el-input v-model="form.time" />
-          </el-form-item>
+
         </el-form>
 
         <template #footer>
@@ -174,6 +190,16 @@ export default {
       form: {},
       total:0,
       pageSize4:5,
+      options:[
+        {
+          value:"上线",
+          label:"上线"
+        },{
+          value:"下线",
+          label:"下线"
+        },
+
+      ],
       currentPage4:1,
       tableData: [
         {
@@ -183,6 +209,7 @@ export default {
           plantTime: '2015-5-9',
           uploadTime: '2016-4-3',
           projectId: 'x123',
+          company:'abc'
         },
         {
           name: '苹果干',
@@ -191,6 +218,7 @@ export default {
           plantTime: '2013-1-15',
           uploadTime: '2016-4-3',
           projectId: 'x124',
+          company:'abc'
         },
         {
           name: '牛肉干',
@@ -199,6 +227,7 @@ export default {
           plantTime: '2016-7-2',
           uploadTime: '2016-4-3',
           projectId: 'x123',
+          company:'abc'
         },
         {
           name: '葡萄',
@@ -207,6 +236,7 @@ export default {
           status: '上线',
           uploadTime: '2016-4-3',
           projectId: 'x123',
+          company:'abc'
         },
       ],
     }

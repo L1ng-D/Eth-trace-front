@@ -21,6 +21,12 @@
       <el-table-column prop="identity" label="身份"  width="180" />
       <el-table-column prop="name" label="昵称" width="180" />
       <el-table-column prop="registerTime" label="注册日期" sortable/>
+      <el-table-column label="公司人员" >
+        <template #default="scope">
+        <span v-if="scope.row.identity ==='普通用户'">无</span>
+          <el-icon :size="20"  v-if="scope.row.identity === '产品供方'" @click = "openDraw(scope.row)"><User /></el-icon>
+        </template>
+      </el-table-column>>
       <el-table-column label="状态" width="180" >
         <template #default="scope">
       <el-switch
@@ -32,6 +38,14 @@
         </template>
         </el-table-column>
     </el-table>
+
+
+        <el-drawer v-model="drawer" title="员工信息" :with-header="false">
+          <span>Hi there!</span>
+        </el-drawer>
+
+
+
 
         <el-pagination
             :currentPage="currentPage4"
@@ -119,6 +133,7 @@ export default {
         file:"",
         text:""
       },
+      drawer:false,
       dialogVisible:false,
       tableData:[
         {
@@ -128,7 +143,7 @@ export default {
           status:true
         },{
           identity:'产品供方',
-          name:'李四',
+          name:'开心牧场',
           registerTime:'2022-10-12',
           status:false
         },
@@ -138,7 +153,11 @@ export default {
   methods:{
     handleSizeChange(){
       alert(1)
-    },handleCurrentChange(){
+    },openDraw(row){
+      this.drawer = true
+      console.log(row)
+    },
+    handleCurrentChange(){
 
     },dealClick(){
       this.centerDialogVisible = true

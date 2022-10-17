@@ -4,22 +4,19 @@
   </div>
   <div style="width:100%;display: flex;flex-wrap: wrap">
     <Aside />
-    <div class="box">
-      <div class="action">
-        <div class="btn"  @click="handleNew">新增</div>
-      </div>
-      <div class="table">
+    <div class="box" style="width: 80%">
+
+      <div class="table" style="width: 80%">
         <el-table :data="plantInfo"  stripe style="width: 100%;text-align: center">
-          <el-table-column prop="id" label="农产品编号"/>
+          <el-table-column prop="id" label="农产品编号" align="center" header-align="left" width="100px"/>
           <el-table-column prop="name" label="农产品名称" />
           <el-table-column prop="time" label="种植时间" />
           <el-table-column prop="address" label="种植地点"/>
           <el-table-column prop="person" label="种植人员"/>
-            <el-table-column fixed="right" label="操作" style="text-align: center;width: auto">
+            <el-table-column  fixed="right" label="操作" >
             <template #default="{ row }">
-              <div type="text" @click="handleDetail(row)">查看</div>
-              <div type="text"  @click="handleEdit(row)">编辑</div>
-              <div type="text"  @click="handleDel(row)">删除</div>
+              <el-button type="primary" @click="handleDetail(row)">新增</el-button>
+              <el-button type="dangerous" @click="handleDel(row)">新增</el-button>
             </template>
             </el-table-column>
         </el-table>
