@@ -22,7 +22,7 @@
         <span class="span">用户管理</span>
       </template>
         <el-menu-item index="1-1" class="span" @click="this.$router.push('/user')">用户信息</el-menu-item>
-      <el-menu-item index="1-2"  class="span">产品上线申请</el-menu-item>
+      <el-menu-item index="1-2"  class="span" @click="this.$router.push('/application')">产品上线申请</el-menu-item>
     </el-sub-menu>
 
     <el-menu-item index="3"  @click="this.$router.push('/info')">

@@ -8,11 +8,14 @@
     <Aside/>
 
       <div style="display: flex;width: 87%;flex-direction: column">
-        <div style="width: 100%">
-        <el-badge :value="application" class="item" style="margin-left: 68%;margin-top: 3%;cursor:pointer;" @click="dealClick">
-          <el-icon :size="25"><Bell /></el-icon>
-        </el-badge>
+        <div style="width: 100%;margin-top:2%">
+            <el-input style="width: 30%;height: 40px;margin-left:30%;" placeholder="请输入用户昵称"></el-input>
+            <el-button type="primary" round style="margin-left: 20px" size="large">查询</el-button>
+            <el-badge :value="application" class="item" style="margin-left: 68%;cursor:pointer;" @click="dealClick">
+              <el-icon :size="25"><Bell /></el-icon>
+            </el-badge>
         </div>
+
     <el-table
         :data="tableData"
         :default-sort="{ prop: 'date', order: 'descending' }"

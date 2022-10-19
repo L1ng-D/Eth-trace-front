@@ -10,6 +10,7 @@ import Detection from "@/views/Detection";
 import Logistics from "@/views/Logistics";
 import Planting1 from "@/views/Planting1";
 import Planting2 from "@/views/Planting2";
+import ApplicationView from "@/views/ApplicationView";
 
 const routes = [
   {
@@ -65,10 +66,14 @@ const routes = [
     component: Logistics,
   }
  ,{
-  path: '/user',
-      name:'UserView',
-      component: UserView,
-}
+    path: '/user',
+    name:'UserView',
+    component: UserView,
+},{
+    path:'/application',
+    name:'application',
+    component: ApplicationView
+  }
 ]
 
 const router = createRouter({

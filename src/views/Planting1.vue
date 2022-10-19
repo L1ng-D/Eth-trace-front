@@ -26,6 +26,17 @@
         </el-table>
       </div>
 
+      <el-pagination
+          :currentPage="currentPage4"
+          :page-size="pageSize4"
+          :page-sizes="[5, 10, 15, 20]"
+          layout="total, sizes, prev, pager, next, jumper"
+          :total="total"
+          @size-change="handleSizeChange"
+          @current-change="handleCurrentChange"
+          style="padding-left: 25%;padding-top: 22px"
+      />
+
       <!-- 新建/编辑弹框 -->
       <Dialog
           v-if="dialogShow"
@@ -58,6 +69,7 @@ export default {
       detailShow: false, // 详情弹窗
       rowInfo: {}, // 新增/编辑的数据
       title: "", // 是新建还是修改
+      total:0,
       plantInfo: [
         {
           id: 1,

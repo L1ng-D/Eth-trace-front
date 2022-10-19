@@ -3,7 +3,7 @@
     <Top />
   </div>
 
-  <div style="width:100%;display: flex;flex-wrap: wrap">
+  <div style="width:100%;display: flex;">
     <Aside />
 
     <div style="padding-top: 15px;">
