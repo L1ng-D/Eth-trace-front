@@ -22,7 +22,7 @@
         <span class="span">用户管理</span>
       </template>
         <el-menu-item index="1-1" class="span" @click="this.$router.push('/user')">用户信息</el-menu-item>
-      <el-menu-item index="1-2"  class="span" @click="this.$router.push('/application')">产品上线申请</el-menu-item>
+      <el-menu-item index="1-2"  class="span" @click="this.$router.push('/application')">产品上线审批</el-menu-item>
     </el-sub-menu>
 
     <el-menu-item index="3"  @click="this.$router.push('/info')">
@@ -33,16 +33,13 @@
     <el-sub-menu index="4" collapse-transition = true>
       <template #title>
         <el-icon><Watermelon /></el-icon>
-        <span  class="span">种植管理</span>
+        <span  class="span">生产管理</span>
       </template>
-      <el-menu-item index="4-1"  class="span" @click="this.$router.push('/Planting1')">种植信息</el-menu-item>
-      <el-menu-item index="4-2"  class="span" @click="this.$router.push('/Planting2')">生长信息</el-menu-item>
+      <el-menu-item index="4-1"  class="span" @click="this.$router.push('/Planting1')">产品信息</el-menu-item>
+      <el-menu-item index="4-2"  class="span" @click="this.$router.push('/Planting2')">生产信息</el-menu-item>
     </el-sub-menu>
 
-    <el-menu-item index="5"  @click="this.$router.push('/Produce')">
-      <el-icon><ChromeFilled /></el-icon>
-      <span  class="span">生产管理</span>
-    </el-menu-item>
+
 
     <el-menu-item index="6"  @click="this.$router.push('/Detection')">
      <el-icon><CircleCheck /></el-icon>
