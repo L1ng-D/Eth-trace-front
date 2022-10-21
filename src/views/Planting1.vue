@@ -4,25 +4,34 @@
   </div>
   <div style="width:100%;display: flex;flex-wrap: wrap">
     <Aside />
-    <div class="box" style="width: 80%">
-
+    <div class="box" style="width: 1300px">
+      <div>
+        <div class="btn1"  @click="handleNew(row)">新增</div>
+        <div class="btn1" style="margin-left: 120px" @click="select(row)">查找</div>
+        <input class="input" style="margin-left: 10px" v-model="plantInfo.id" placeholder="请输入作物编号" />
+      </div>
       <div class="table">
-        <el-table :data="plantInfo"  stripe style="width: auto;text-align: center">
-          <el-table-column prop="id" label="农产品编号" align="center" header-align="left" width="100px"/>
-          <el-table-column prop="name"  label="农产品名称" />
-          <el-table-column prop="time"  label="种植时间" />
-          <el-table-column prop="address" label="种植地点"/>
-          <el-table-column prop="person"  label="种植人员"/>
-            <el-table-column  fixed="right" label="操作" width="300px">
+        <el-table :data="plantInfo"
+                  border
+                  :header-row-style="headerRowStyle"
+                  :row-style="rowState"
+                  :header-cell-style="{'background':'#e0eed1','text-align': 'center'}"
+                  :cell-style="{'text-align':'center',backgroundColor: '#dee7da',}"
+                  @selection-change="handleSelectionChange"
+                 >
+          <el-table-column type="selection" width="55" />
+          <el-table-column prop="id" label="作物编号" align="center" header-align="left" width="100px"/>
+          <el-table-column prop="name"  label="作物名称" />
+          <el-table-column prop="time"  label="开始培育时间 " />
+          <el-table-column prop="address" label="培育地点"/>
+          <el-table-column prop="num"  label="培育数量"/>
+          <el-table-column  fixed="right" label="操作" width="250px">
             <template #default="{ row }">
-              <div class="action">
-                <div class="btn"  @click="handleNew(row)">新增</div>
-                <div class="btn"  @click="handleDetail(row)">详情</div>
-                <div class="btn"  @click="handleEdit(row)">编辑</div>
-                <div class="btn"  @click="handleDel(row)">删除</div>
-              </div>
+                <div  class="btn" @click="handleDetail(row)">详情</div>
+                <div  class="btn" @click="handleEdit(row)">编辑</div>
+                <div  class="btn" @click="handleDel(row)">删除</div>
             </template>
-            </el-table-column>
+          </el-table-column>
         </el-table>
       </div>
 
@@ -70,24 +79,73 @@ export default {
       rowInfo: {}, // 新增/编辑的数据
       title: "", // 是新建还是修改
       total:0,
+      pageSize4:5,
       plantInfo: [
         {
           id: 1,
           name: "西瓜",
           time: "2022-12-12",
           address: "杭州",
-          person: "李",
+          num: "李",
         },
         {
           id: 2,
           name: "土豆",
           time: "2022-12-13",
           address: "上海",
-          person: "刘",
+          num: "刘",
+        }
+        ,
+        {
+          id: 2,
+          name: "土豆",
+          time: "2022-12-13",
+          address: "上海",
+          num: "刘",
+        }
+        ,
+        {
+          id: 2,
+          name: "土豆",
+          time: "2022-12-13",
+          address: "上海",
+          num: "刘",
+        }
+        ,
+        {
+          id: 2,
+          name: "土豆",
+          time: "2022-12-13",
+          address: "上海",
+          num: "刘",
         }
       ],
     });
     const method = reactive({
+      headerRowStyle(args){
+        console.log(args)
+        return {
+          height: '50px',
+          color:'#5b5e0b',
+          fontSize:'18px',
+          fontFamily:'cursive',
+          fontWeight:'bolder',
+          textAlign:'center'
+        }
+      },
+     rowState(arg){
+        return {
+          color:'#6a9a49',
+          fontWeight:'bold',
+          backgroundColor: '#dee7da',
+          fontFamily:'cursive',
+          fontSize:"17px",
+        }
+      },
+      select()
+      {
+
+      },
       handleNew() {
         data.title = "新增";
         data.rowInfo = {};
@@ -140,20 +198,16 @@ export default {
   },
 }
 </script>
+
 <style lang="scss" scoped>
 .box {
   padding-top: 40px;
   padding-left: 40px;
-  width: 800px;
+  padding-right: 40px;
+  width: 700px;
 }
 .table{
   padding-top: 20px;
-  text-align: center;
-}
-.action {
-  width: 300px;
-  height: 50px;
-  justify-content: center;
 }
 .btn {
   width: 55px;
@@ -161,12 +215,44 @@ export default {
   text-align: center;
   line-height: 30px;
   border-radius: 8px;
-  font-weight: bold;
   display: inline-block;
   margin-left:10px;
-
 }
 .btn:hover {
+  filter: brightness(10);
+  color: black;
+}
+.input{
+  width:200px;
+  border: 2px solid #6a6c0f;
+  text-align: center;
+  line-height: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: inline-block;
+  margin-left:10px;
+  font-weight: bold;
+  font-size:20px ;
+  font-family:cursive;
+}
+
+.input::placeholder{
+  font-weight: bold;
+  color:#6a6c0f;
+  font-size:20px ;
+}
+.btn1 {
+  width: 65px;
+  border: 2px solid #6a6c0f;
+  text-align: center;
+  line-height: 35px;
+  border-radius: 8px;
+  display: inline-block;
+  font-family:cursive;
+  font-weight: bold;
+  font-size:20px;
+}
+.btn1:hover {
   filter: brightness(10);
   color: black;
 }

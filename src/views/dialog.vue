@@ -8,20 +8,20 @@
         class="demo-ruleForm"
         :size="formSize"
     >
-      <el-form-item label="农产品编号：" prop="id">
+      <el-form-item label="产品编号：" prop="id">
         <el-input v-model="formData.id"></el-input>
       </el-form-item>
-      <el-form-item label="农产品名称：" prop="name">
+      <el-form-item label="产品名称：" prop="name">
         <el-input v-model="formData.name"></el-input>
       </el-form-item>
-      <el-form-item label="种植时间：" prop="time">
+      <el-form-item label="培育时间：" prop="time">
         <el-input v-model="formData.time"></el-input>
       </el-form-item>
-      <el-form-item label="种植地点：" prop="address">
+      <el-form-item label="培育地点：" prop="address">
         <el-input v-model="formData.address"></el-input>
       </el-form-item>
-      <el-form-item label="种植人员：" prop="person">
-        <el-input v-model="formData.person"></el-input>
+      <el-form-item label="培育数量：" prop="num">
+        <el-input v-model="formData.num"></el-input>
       </el-form-item>
       <el-form-item>
         <el-button type="primary" @click="submitForm()">确定</el-button>

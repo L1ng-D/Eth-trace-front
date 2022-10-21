@@ -1,24 +1,24 @@
 <template>
   <el-dialog :model-value="true" title="详情" @close="handleClose">
     <p>
-      <label for="id">农产品编号：</label>
+      <label for="id">产品编号：</label>
       <span id="id"> {{ plantInfo.id }} </span>
     </p>
     <p>
-      <label for="name">农产品姓名称：</label>
+      <label for="name">产品名称：</label>
       <span id="name"> {{ plantInfo.name }} </span>
     </p>
     <p>
-      <label for="time">种植时间：</label>
+      <label for="time">开始培育时间：</label>
       <span id="time"> {{ plantInfo.time }} </span>
     </p>
     <p>
-      <label for="address">种植地点：</label>
+      <label for="address">培育地点：</label>
       <span id="address"> {{ plantInfo.address }} </span>
     </p>
     <p>
-      <label for="person">种植人员：</label>
-      <span id="person"> {{ plantInfo.person }} </span>
+      <label for="num">培育数量：</label>
+      <span id="num"> {{ plantInfo.num }} </span>
     </p>
 
   </el-dialog>
