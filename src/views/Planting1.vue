@@ -241,6 +241,9 @@ export default {
   color:#6a6c0f;
   font-size:20px ;
 }
+.input:hover {
+  filter: brightness(1.5);
+}
 .btn1 {
   width: 65px;
   border: 2px solid #6a6c0f;
