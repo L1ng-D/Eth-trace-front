@@ -8,20 +8,23 @@
         class="demo-ruleForm"
         :size="formSize"
     >
-      <el-form-item label="作物编号：" prop="id" class="item">
-        <el-input v-model="formData.id"/>
+      <el-form-item label="信息编号：" prop="id">
+        <el-input v-model="formData.id"></el-input>
+      </el-form-item>
+      <el-form-item label="作物编号：" prop="id_">
+        <el-input v-model="formData.id_"></el-input>
       </el-form-item>
       <el-form-item label="作物名称：" prop="name">
-        <el-input v-model="formData.name"/>
+        <el-input v-model="formData.name"></el-input>
       </el-form-item>
-      <el-form-item label="开始培育时间：" prop="time">
-        <el-input v-model="formData.time"/>
+      <el-form-item label="记录时间：" prop="time">
+        <el-input v-model="formData.time"></el-input>
       </el-form-item>
-      <el-form-item label="培育地点：" prop="address">
-        <el-input v-model="formData.address"/>
+      <el-form-item label="天气状况：" prop="weather">
+        <el-input v-model="formData.weather"></el-input>
       </el-form-item>
-      <el-form-item label="培育数量：" prop="num">
-        <el-input v-model="formData.num"/>
+      <el-form-item label="描述：" prop="num">
+        <el-input v-model="formData.description"></el-input>
       </el-form-item>
       <el-form-item>
         <el-button type="primary" @click="submitForm()">确定</el-button>
@@ -90,9 +93,5 @@ export default {
 };
 </script>
 
-<style>
-.item{
-  color: wheat;
-}
-
+<style lang="scss" scoped>
 </style>

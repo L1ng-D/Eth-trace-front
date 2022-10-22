@@ -6,7 +6,7 @@
     <Aside />
     <div class="box" style="width: 1300px">
       <div>
-        <div class="btn1"  @click="handleNew(row)">新增</div>
+        <div class="btn1" style="width: 140px" @click="handleNew(row)">新增作物信息</div>
         <div class="btn1" style="margin-left: 120px" @click="select(row)">查找</div>
         <input class="input" style="margin-left: 10px" v-model="plantInfo.id" placeholder="请输入作物编号" />
       </div>
@@ -86,14 +86,14 @@ export default {
           name: "西瓜",
           time: "2022-12-12",
           address: "杭州",
-          num: "李",
+          num: "1亩",
         },
         {
           id: 2,
           name: "土豆",
           time: "2022-12-13",
           address: "上海",
-          num: "刘",
+          num: "6亩",
         }
         ,
         {
@@ -101,7 +101,7 @@ export default {
           name: "土豆",
           time: "2022-12-13",
           address: "上海",
-          num: "刘",
+          num: "10亩",
         }
         ,
         {
@@ -109,7 +109,7 @@ export default {
           name: "土豆",
           time: "2022-12-13",
           address: "上海",
-          num: "刘",
+          num: "7亩",
         }
         ,
         {
@@ -117,7 +117,7 @@ export default {
           name: "土豆",
           time: "2022-12-13",
           address: "上海",
-          num: "刘",
+          num: "1亩",
         }
       ],
     });
@@ -219,8 +219,8 @@ export default {
   margin-left:10px;
 }
 .btn:hover {
-  filter: brightness(10);
-  color: black;
+  filter: brightness(1.2);
+  color: #6a6c0f;
 }
 .input{
   width:200px;
@@ -234,15 +234,19 @@ export default {
   font-weight: bold;
   font-size:20px ;
   font-family:cursive;
+  color:#6a6c0f;
 }
 
 .input::placeholder{
-  font-weight: bold;
-  color:#6a6c0f;
+  font-weight: bolder;
+  color:  #206c0f;
   font-size:20px ;
 }
 .input:hover {
-  filter: brightness(1.5);
+  filter: brightness(1.2);
+  color:  #206c0f;
+  font-weight: bold;
+
 }
 .btn1 {
   width: 65px;
@@ -254,10 +258,10 @@ export default {
   font-family:cursive;
   font-weight: bold;
   font-size:20px;
+  color:#5b5e0b;
 }
 .btn1:hover {
-  filter: brightness(10);
-  color: black;
+  filter: brightness(1.2);
+  color: #206c0f;
 }
-
 </style>

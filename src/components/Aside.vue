@@ -35,8 +35,8 @@
         <el-icon><Watermelon /></el-icon>
         <span  class="span">生产管理</span>
       </template>
-      <el-menu-item index="4-1"  class="span" @click="this.$router.push('/Planting1')">产品信息</el-menu-item>
-      <el-menu-item index="4-2"  class="span" @click="this.$router.push('/Planting2')">生产信息</el-menu-item>
+      <el-menu-item index="4-1"  class="span" @click="this.$router.push('/Planting1')">作物信息</el-menu-item>
+      <el-menu-item index="4-2"  class="span" @click="this.$router.push('/Planting2')">生长信息</el-menu-item>
     </el-sub-menu>
 
 

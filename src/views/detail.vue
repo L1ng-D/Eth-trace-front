@@ -1,6 +1,6 @@
 <template>
   <el-dialog :model-value="true" title="详情" @close="handleClose">
-    <p>
+    <p class="p">
       <label for="id">产品编号：</label>
       <span id="id"> {{ plantInfo.id }} </span>
     </p>
@@ -50,5 +50,6 @@ export default {
 };
 </script>
 
-<style lang="less" scoped>
+<style  scoped>
+
 </style>
