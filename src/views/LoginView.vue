@@ -6,12 +6,12 @@
       <div class="form-wrapper">
         <div class="header">欢迎登录</div>
         <el-form ref="form" :model="form" class="input-wrapper">
-          <el-form-item prop="username">
+          <el-form-item prop="userName">
             <div class="border-wrapper">
               <input
                   type="text"
-                  v-model="form.username"
-                  placeholder="username"
+                  v-model="form.userName"
+                  placeholder="userName"
                   class="border-item"
                   autocomplete="off"
               />
@@ -32,7 +32,7 @@
             <div class="radio">
               <el-radio-group class="el-radio-group" v-model="form.role">
                 <el-radio class="radio1" label="1">管理员</el-radio>
-                <el-radio class="radio2" label="2">非管理员</el-radio>
+                <el-radio class="radio2" label="0">非管理员</el-radio>
               </el-radio-group>
             </div>
           </el-form-item>
@@ -60,17 +60,18 @@ export default {
   data() {
     return {
       form: {
-        username: '',
+        userName: '',
         password: '',
         role:'',
       },
     }
   },
+  created() {},
   methods: {
     login() {
       this.$refs['form'].validate((valid) => {
         if (valid) {
-          if (!this.form.username||!this.form.password) {
+          if (!this.form.userName||!this.form.password) {
             this.$message.error("请填写用户名和密码")
             return
           }
@@ -78,6 +79,7 @@ export default {
             this.$message.error("请填选择角色")
             return
           }
+          console.log(this.form.role)
           request.post("/user/login", this.form).then(res => {
             if (res.code === '0') {
               this.$message({
