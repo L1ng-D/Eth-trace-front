@@ -6,12 +6,12 @@
       <div class="form-wrapper">
         <div class="header">欢迎注册</div>
         <el-form ref="form" :model="form" class="input-wrapper">
-          <el-form-item prop="username">
+          <el-form-item prop="userName">
             <div class="border-wrapper">
               <input
                 type="text"
-                v-model="form.username"
-                placeholder="username"
+                v-model="form.userName"
+                placeholder="userName"
                 class="border-item"
                 autocomplete="off"
               />
@@ -28,11 +28,11 @@
               />
             </div>
           </el-form-item>
-          <el-form-item prop="confirm">
+          <el-form-item prop="repeatPassword">
             <div class="border-wrapper">
               <input
                 type="password"
-                v-model="form.confirm"
+                v-model="form.repeatPassword"
                 placeholder="password"
                 class="border-item"
                 autocomplete="off"
@@ -62,8 +62,9 @@ export default {
   data() {
     return {
       form: {
-        username: '',
+        userName: '',
         password: '',
+        repeatPassword:'',
       },
       rules: {},
       isLogin: false,
@@ -71,13 +72,13 @@ export default {
   },
   methods: {
     register() {
-      if (!this.form.password || !this.form.confirm || !this.form.username) {
+      if (!this.form.password || !this.form.repeatPassword || !this.form.userName) {
         this.$message({
           type: 'error',
           message: '请完成所有信息的输入！',
         })
       } else {
-        if (this.form.password !== this.form.confirm) {
+        if (this.form.password !== this.form.repeatPassword) {
           this.$message({
             type: 'error',
             message: '两次密码输入不一致！',
