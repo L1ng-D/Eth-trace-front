@@ -56,6 +56,8 @@
 </template>
 
 <script>
+import request from "@/utils/request";
+
 export default {
   name: 'RegisterView',
 
@@ -85,28 +87,26 @@ export default {
           })
           return
         } else {
-          this.$message.success('注册成功!!!')
+          this.$refs['form'].validate((valid) => {
+            if (valid) {
+              request.post("/user/register", this.form).then(res => {
+                if (res.code === '1') {
+                  this.$message({
+                    type: "success",
+                    message: "注册成功"
+                  })
+                  this.$router.push("login")
+                } else {
+                  this.$message({
+                    type: "error",
+                    message: res.errorMsg
+                  })
+                }
+              })
+            }
+          })
         }
       }
-
-      // this.$refs['form'].validate((valid) => {
-      //   if (valid) {
-      //     request.post("/user/register", this.form).then(res => {
-      //       if (res.code === '0') {
-      //         this.$message({
-      //           type: "success",
-      //           message: "注册成功"
-      //         })
-      //         this.$router.push("/login")  //登录成功之后进行页面的跳转，跳转到主页
-      //       } else {
-      //         this.$message({
-      //           type: "error",
-      //           message: res.msg
-      //         })
-      //       }
-      //     })
-      //   }
-      // })
     },
   },
 }

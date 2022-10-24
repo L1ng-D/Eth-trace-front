@@ -59,14 +59,12 @@ export default {
   name: 'LoginView',
   data() {
     return {
-      form: {
-        userName: '',
-        password: '',
-        role:'',
-      },
+      form: {},
     }
   },
-  created() {},
+  // created() {
+  //   sessionStorage.removeItem("user")
+  // },
   methods: {
     login() {
       this.$refs['form'].validate((valid) => {
@@ -79,19 +77,19 @@ export default {
             this.$message.error("请填选择角色")
             return
           }
-          console.log(this.form.role)
           request.post("/user/login", this.form).then(res => {
-            if (res.code === '0') {
+            if (res.code === 1) {
               this.$message({
                 type: "success",
                 message: "登录成功"
               })
               sessionStorage.setItem("user", JSON.stringify(res.data))  // 缓存用户信息
-              this.$router.push("/")  //登录成功之后进行页面的跳转，跳转到主页
-            } else {
+              this.$router.push("home")  //登录成功之后进行页面的跳转，跳转到主页
+            }
+            else {
               this.$message({
                 type: "error",
-                message: res.msg
+                message: "用户名或密码错误"
               })
             }
           })
