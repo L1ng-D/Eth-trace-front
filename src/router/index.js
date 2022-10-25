@@ -11,6 +11,7 @@ import Logistics from "@/views/Logistics";
 import Planting1 from "@/views/Planting1";
 import Planting2 from "@/views/Planting2";
 import ApplicationView from "@/views/ApplicationView";
+import AppLoginView from "@/appview/AppLoginView";
 
 const routes = [
   {
@@ -73,6 +74,10 @@ const routes = [
     path:'/application',
     name:'application',
     component: ApplicationView
+  },{
+    path:'/FrontLogin',
+    name:'FrontLogin',
+    component: AppLoginView
   }
 ]
 
