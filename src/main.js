@@ -15,11 +15,13 @@ echarts.registerMap('china', geoJson)
 import dataV from '@jiaminghi/data-view'
 // window.$vueApp.use(dataV)
 import ElementUI from 'element-plus'
+import Vant from 'vant';
+import 'vant/lib/index.css';
 // import 'element-ui/lib/theme-chalk/index.css'
 // window.$vueApp.use(ElementUI)
 
 const app = createApp(App)
-app.use(store).use(router).use(ElementPlus).use(dataV).use(ElementUI).mount('#app')
+app.use(store).use(router).use(ElementPlus).use(dataV).use(ElementUI).use(Vant).mount('#app')
 app.config.globalProperties.$echarts = echarts
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
     app.component(key, component)
