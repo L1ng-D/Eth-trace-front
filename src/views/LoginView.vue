@@ -101,14 +101,6 @@ export default {
 </script>
 
 <style scoped>
-.h {
-  font-size: 50px;
-  color: #0b5b33;
-  text-align: center;
-  margin-bottom: 50px;
-  margin-top: 40px;
-  font-weight: bold;
-}
 .login-wrap {
   font-family: JetBrains Mono Medium;
   display: flex;
@@ -119,6 +111,17 @@ export default {
   background-size: cover;
   width: 100%;
   height: 100%;
+  background:url("../assets/1.jpg");
+  position:fixed;
+  background-size:100% 100%;
+}
+.h {
+  font-size: 50px;
+  color: #0b5b33;
+  text-align: center;
+  margin-bottom: 50px;
+  margin-top: 40px;
+  font-weight: bold;
 }
 .form-wrapper {
   width: 350px;

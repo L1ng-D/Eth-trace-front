@@ -90,12 +90,12 @@ export default {
           this.$refs['form'].validate((valid) => {
             if (valid) {
               request.post("/user/register", this.form).then(res => {
-                if (res.code === '1') {
+                if (res.code === 1) {
                   this.$message({
                     type: "success",
                     message: "注册成功"
                   })
-                  this.$router.push("login")
+                  this.$router.push("/")
                 } else {
                   this.$message({
                     type: "error",
@@ -131,6 +131,9 @@ export default {
   background-size: cover;
   width: 100%;
   height: 100%;
+  background:url("../assets/1.jpg");
+  position:fixed;
+  background-size:100% 100%;
 }
 .form-wrapper {
   width: 350px;
